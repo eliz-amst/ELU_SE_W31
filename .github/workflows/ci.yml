@@ -22,7 +22,7 @@ jobs:
       - name: Run Pylint
         run: pylint shopping_cart.py
 
- testing:
+  testing:
     runs-on: ubuntu-latest
 
     steps:
