@@ -1,36 +1,42 @@
-Codebase:
+# Shopping Cart – CI and Automated Testing
 
-You can find a simple Python codebase that calculates and displays the total price of items in a shopping cart on this GitHub repository: https://github.com/shoklah/ELU_SE_W31. Fork the project yo your GitHub account to be able to work on it. The codebase consists of a single Python script named `shopping_cart.py`. However, this script contains several issues related to code quality, potential bugs, and adherence to coding standards.
+## Project Description
 
- 
+This project calculates and displays the total price of items in a shopping cart using Python.
 
-Tasks:
+## Continuous Integration
 
-GitHub Actions Setup:
-   - Navigate to the repository you forked in the previous assignment.
-   - Create a new directory in the repository root named `.github/workflows`.
-   - Inside this directory, create a YAML file (e.g., `ci.yml`) to configure GitHub Actions.
+GitHub Actions is used to automatically check the code whenever changes are pushed to the repository.
 
+The CI workflow includes:
 
-Automated Static Analysis:
-   - Utilize the chosen static analysis tool (e.g., `pylint`, `flake8`, `bandit`) to add a step in your GitHub Actions workflow that performs automated static analysis on the `shopping_cart.py` script.
-   - Configure the workflow to run the static analysis step whenever changes are pushed to the repository.
+- **Static Analysis:** Pylint checks the `shopping_cart.py` file for code quality and coding standard issues.
+- **Automated Testing:** Python's built-in `unittest` framework runs the automated tests in `test_shopping_cart.py`.
 
- 
-Automated Testing:
-   - Implement a testing framework for the `shopping_cart.py` script. You can use Python's built-in `unittest` library or any other testing framework you prefer.
-   - Create a testing step in the GitHub Actions workflow to execute the test suite you've created.
-   - Ensure that the workflow runs the tests every time changes are pushed.
+## Running the Checks Locally
 
- 
-Submission Guidelines:
+Install Pylint:
 
+```bash
+pip install pylint
+```
 
-   Workflow Integration:
-      - Ensure that the GitHub Actions workflow correctly executes the static analysis tool and tests as specified in the tasks.
+Run static analysis:
+
+```bash
+pylint shopping_cart.py
+```
+
+Run automated tests:
+
+```bash
+python -m unittest discover -s . -p "test_*.py"
+```
+
+## Project Files
+
+- `shopping_cart.py` – Shopping cart calculation and display functions.
+- `test_shopping_cart.py` – Automated unit tests.
+- `.github/workflows/ci.yml` – GitHub Actions CI configuration.
+
    
-   Link:
-      - Provide the link to your public forked repository that demonstrates the integrated GitHub Actions workflow and includes the updated documentation.
-
-
-Note: Here is the official documentation for GitHub Actions: https://docs.github.com/en/actions/quickstartLinks to an external site.
