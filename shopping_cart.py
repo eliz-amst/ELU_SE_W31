@@ -6,7 +6,7 @@ def CalculateTotal(cart):
     return total
 
 def display_total(Total):
-    print("Total price: " + Total)
+    print("Total price: " + str(Total))
 
 CART = [
     {'name': 'Item A', 'price': 10.99},
@@ -20,3 +20,10 @@ for item in CART:
 shopping_cart_total = CalculateTotal(CART)
 display_total(shopping_cart_total)
 
+
+if __name__ == "__main__":
+    for item in CART:
+        print(f"Item: {item['name']} - Price: ${item['price']}")
+
+    shopping_cart_total = CalculateTotal(CART)
+    display_total(shopping_cart_total)
